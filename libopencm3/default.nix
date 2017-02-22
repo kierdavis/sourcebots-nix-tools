@@ -1,7 +1,7 @@
 { stdenv, fetchFromGitHub, gcc-arm-embedded, python2 }:
 
 stdenv.mkDerivation {
-  name = "srd-libopencm3";
+  name = "libopencm3";
   src = fetchFromGitHub {
     owner = "libopencm3";
     repo = "libopencm3";

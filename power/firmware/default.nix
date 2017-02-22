@@ -1,7 +1,7 @@
 { stdenv, boost, fetchgit, gcc-arm-embedded, libopencm3 }:
 
 stdenv.mkDerivation {
-  name = "srd-power-firmware";
+  name = "power-firmware";
   src = fetchgit {
     url = "/home/kier/projects/srd/power-v4-fw";
     rev = "550b95e5dbf66cf962853a9cbbd26b88a8cc66a2";
