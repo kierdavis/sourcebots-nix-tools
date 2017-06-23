@@ -1,9 +1,11 @@
-{ stdenv, fetchgit, gcc-arm-embedded, libopencm3 }:
+{ stdenv, fetchFromGitHub, gcc-arm-embedded, libopencm3 }:
 
 stdenv.mkDerivation {
   name = "motor-firmware";
-  src = fetchgit {
-    url = "/home/kier/projects/srd/motor-v4-fw";
+  src = fetchFromGitHub {
+    owner = "sourcebots";
+    repo = "motor-v4-fw";
+    fetchSubmodules = true;
     rev = "292f135e097aef31a755a225de4b3814d9e3c474";
     sha256 = "1f0izkaii721alb0srpbd9jph2zd5xsz42y0kbyyyk6ngfdlgl9c";
   };

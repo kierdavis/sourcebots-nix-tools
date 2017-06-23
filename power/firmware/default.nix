@@ -1,9 +1,11 @@
-{ stdenv, boost, fetchgit, gcc-arm-embedded, libopencm3 }:
+{ stdenv, boost, fetchFromGitHub, gcc-arm-embedded, libopencm3 }:
 
 stdenv.mkDerivation {
   name = "power-firmware";
-  src = fetchgit {
-    url = "/home/kier/projects/srd/power-v4-fw";
+  src = fetchFromGitHub {
+    owner = "sourcebots";
+    repo = "power-v4-fw";
+    fetchSubmodules = true;
     rev = "550b95e5dbf66cf962853a9cbbd26b88a8cc66a2";
     sha256 = "0wvi8pcm943xpcl0yf03ppb89wb9fyv6wgjzhkms6g9f6xi7h8dc";
   };
