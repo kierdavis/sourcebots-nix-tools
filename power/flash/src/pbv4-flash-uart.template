@@ -1,0 +1,7 @@
+#!@shell@
+if [ -z "$1" ]; then
+  echo "usage: $0 /dev/ttyUSB0"
+  exit 2
+fi
+image=@powerFirmware@/images/@imagename@
+@stm32flash@/bin/stm32flash -b 115200 -w $image "$1"
