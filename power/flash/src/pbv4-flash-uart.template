@@ -4,4 +4,8 @@ if [ -z "$1" ]; then
   exit 2
 fi
 image=@powerFirmware@/images/@imagename@
-@stm32flash@/bin/stm32flash -b 115200 -w $image "$1"
+if @stm32flash@/bin/stm32flash -b 115200 -w $image "$1"; then
+  echo "SUCCESS"
+else
+  echo "FAILED"
+fi
