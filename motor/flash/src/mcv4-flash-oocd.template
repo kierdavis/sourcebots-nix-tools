@@ -1,0 +1,9 @@
+#!@shell@
+image=@motorFirmware@/images/@imagename@
+@openocd@/bin/openocd -f @motorFirmware@/oocd/mcv4.cfg \
+  -c "init" \
+  -c "reset init" \
+  -c "stm32f1x mass_erase 0" \
+  -c "flash write_image $image" \
+  -c "reset" \
+  -c "shutdown"

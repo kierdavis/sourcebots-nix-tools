@@ -1,18 +1,21 @@
-{ stdenv, motorFirmware, openocd, writeScriptBin }:
+{ stdenv, motorFirmware, openocd, stm32flash }:
 
-let
-  flash = name: image: writeScriptBin name ''
-    #!${stdenv.shell}
-    ${openocd}/bin/openocd -f ${motorFirmware}/oocd/mcv4.cfg \
-      -c "init" \
-      -c "reset init" \
-      -c "stm32f1x mass_erase 0" \
-      -c "flash write_image ${image}" \
-      -c "reset" \
-      -c "shutdown"
+stdenv.mkDerivation {
+  inherit motorFirmware openocd stm32flash;
+  inherit (stdenv) shell;
+  name = "mcv4-flash";
+  src = ./.;
+  buildPhase = ''
+    mkdir -p bin
+    imagename=mcv4.elf      substituteAll src/mcv4-flash-oocd.template bin/mcv4-flash-fw-oocd
+    imagename=mcv4_test.elf substituteAll src/mcv4-flash-oocd.template bin/mcv4-flash-testfw-oocd
+    imagename=mcv4.bin      substituteAll src/mcv4-flash-uart.template bin/mcv4-flash-fw-uart
+    imagename=mcv4_test.bin substituteAll src/mcv4-flash-uart.template bin/mcv4-flash-testfw-uart
   '';
-in
-  {
-    fw = flash "mcv4-flash-fw" "${motorFirmware}/images/mcv4.elf";
-    testfw = flash "mcv4-flash-testfw" "${motorFirmware}/images/mcv4_test.elf";
-  }
+  installPhase = ''
+    for src in bin/*; do
+      dest=$out/bin/$(basename $src)
+      install -D -m 0755 $src $dest
+    done
+  '';
+}
