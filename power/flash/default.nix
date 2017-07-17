@@ -7,10 +7,11 @@ stdenv.mkDerivation {
   src = ./.;
   buildPhase = ''
     mkdir -p bin
-    imagename=pbv4.elf      substituteAll src/pbv4-flash-oocd.template bin/pbv4-flash-fw-oocd
-    imagename=pbv4_test.elf substituteAll src/pbv4-flash-oocd.template bin/pbv4-flash-testfw-oocd
-    imagename=pbv4.bin      substituteAll src/pbv4-flash-uart.template bin/pbv4-flash-fw-uart
-    imagename=pbv4_test.bin substituteAll src/pbv4-flash-uart.template bin/pbv4-flash-testfw-uart
+    imagename=pbv4.elf        substituteAll src/pbv4-flash-oocd.template bin/pbv4-flash-fw-oocd
+    imagename=pbv4_test.elf   substituteAll src/pbv4-flash-oocd.template bin/pbv4-flash-testfw-oocd
+    imagename=pbv4.bin        substituteAll src/pbv4-flash-uart.template bin/pbv4-flash-fw-uart
+    imagename=pbv4_test.bin   substituteAll src/pbv4-flash-uart.template bin/pbv4-flash-testfw-uart
+    imagename=pbv4_noboot.bin substituteAll src/pbv4-flash-uart.template bin/pbv4-flash-fwnoboot-uart
   '';
   installPhase = ''
     for src in bin/*; do
