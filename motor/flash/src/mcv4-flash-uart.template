@@ -1,10 +1,11 @@
 #!@shell@
+set -e
 if [ -z "$1" ]; then
   echo "usage: $0 /dev/ttyUSB0"
   exit 2
 fi
 image=@motorFirmware@/images/@imagename@
-if @stm32flash@/bin/stm32flash -b 115200 -w $image "$1"; then
+if @stm32flash@/bin/stm32flash -b 115200 -w $image -v "$1"; then
   echo "SUCCESS"
 else
   echo "FAILED (did you remember to press the side button first?)"

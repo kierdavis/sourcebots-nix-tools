@@ -1,4 +1,5 @@
 #!@shell@
+set -e
 image=@motorFirmware@/images/@imagename@
 @openocd@/bin/openocd -f @motorFirmware@/oocd/mcv4.cfg \
   -c "init" \

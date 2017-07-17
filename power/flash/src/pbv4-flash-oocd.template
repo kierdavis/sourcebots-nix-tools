@@ -1,4 +1,5 @@
 #!@shell@
+set -e
 image=@powerFirmware@/images/@imagename@
 @openocd@/bin/openocd -f @powerFirmware@/oocd/pbv4.cfg \
   -c "init" \
