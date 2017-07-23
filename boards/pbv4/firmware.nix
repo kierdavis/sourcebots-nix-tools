@@ -15,4 +15,10 @@ stdenv.mkDerivation {
     install -D -m 0644 -t $out/images pbv4.{bin,elf} pbv4_noboot.bin pbv4_test.{bin,elf}
     install -D -m 0644 -t $out/oocd oocd/pbv4.cfg
   '';
+
+  meta = with stdenv.lib; {
+    #license = XXX;  # FIXME
+    description = "Firmware for the PBV4 power board";
+    homepage = https://github.com/sourcebots/power-v4-fw;
+  };
 }

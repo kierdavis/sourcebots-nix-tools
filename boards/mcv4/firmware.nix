@@ -15,4 +15,10 @@ stdenv.mkDerivation {
     install -D -m 0644 -t $out/images mcv4.{bin,elf} mcv4_test.{bin,elf}
     install -D -m 0644 -t $out/oocd oocd/mcv4.cfg
   '';
+
+  meta = with stdenv.lib; {
+    #license = XXX;  # FIXME
+    description = "Firmware for the MCV4 motor controller board";
+    homepage = https://github.com/sourcebots/motor-v4-fw;
+  };
 }
