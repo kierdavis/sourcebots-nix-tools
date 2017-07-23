@@ -14,6 +14,13 @@ stdenv.mkDerivation {
   installPhase = ''
     install -D -m 0644 -t $out/images pbv4.{bin,elf} pbv4_noboot.bin pbv4_test.{bin,elf}
     install -D -m 0644 -t $out/oocd oocd/pbv4.cfg
+
+    mkdir -p $out/bin
+    cat >$out/bin/pbv4-firmware-dir <<EOF
+      #!${stdenv.shell}
+      echo $out/images
+    EOF
+    chmod +x $out/bin/pbv4-firmware-dir
   '';
 
   meta = with stdenv.lib; {
