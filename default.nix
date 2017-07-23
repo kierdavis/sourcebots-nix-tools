@@ -2,8 +2,6 @@ let
   pkgs = import <nixpkgs> {};
 in
   rec {
-    lib.dfu-programmer = pkgs.callPackage ./lib/dfu-programmer {};
-
     power.bake-serial-num = pkgs.callPackage ./power/bake-serial-num {};
     power.libopencm3 = pkgs.callPackage ./boards/pbv4/libopencm3.nix {};
     power.firmware = pkgs.callPackage ./boards/pbv4/firmware.nix { pbv4-libopencm3 = power.libopencm3; };
