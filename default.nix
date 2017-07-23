@@ -2,6 +2,7 @@ let
   pkgs = import <nixpkgs> {};
 in
   rec {
+    lib.dfu-programmer = pkgs.callPackage ./lib/dfu-programmer {};
     lib.python-libusb1 = pkgs.callPackage ./lib/python-libusb1 {};
 
     power.bake-serial-num = pkgs.callPackage ./power/bake-serial-num {};
