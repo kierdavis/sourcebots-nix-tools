@@ -13,4 +13,6 @@ in
     motor.libopencm3 = pkgs.callPackage ./motor/libopencm3 {};
     motor.firmware = pkgs.callPackage ./motor/firmware { libopencm3 = motor.libopencm3; };
     motor.flash = pkgs.callPackage ./motor/flash { motorFirmware = motor.firmware; };
+
+    sw.robotd = pkgs.callPackage ./sw/robotd {};
   }
