@@ -1,8 +1,9 @@
-{ stdenv, powerFirmware, openocd, stm32flash }:
+{ stdenv, bake-serial-num, powerFirmware, openocd, stm32flash }:
 
 stdenv.mkDerivation {
   inherit powerFirmware openocd stm32flash;
   inherit (stdenv) shell;
+  bakeSerialNum = bake-serial-num;
   name = "pbv4-flash";
   src = ./.;
   buildPhase = ''

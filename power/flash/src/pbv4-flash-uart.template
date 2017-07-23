@@ -1,11 +1,19 @@
 #!@shell@
 set -e
-if [ -z "$1" ]; then
-  echo "usage: $0 /dev/ttyUSB0"
+
+if [ -z "$1" -o -z "$2" ]; then
+  echo "usage: $0 /dev/ttyUSB0 SERIALNUM"
   exit 2
 fi
-image=@powerFirmware@/images/@imagename@
-if @stm32flash@/bin/stm32flash -b 115200 -w $image -v "$1"; then
+
+device="$1"
+serialnum="$2"
+
+rawimage=@powerFirmware@/images/@imagename@
+bakedimage=$(mktemp)
+@bakeSerialNum@/bin/pbv4-bake-serial-num "$serialnum" < "$rawimage" > "$bakedimage"
+
+if @stm32flash@/bin/stm32flash -b 115200 -w "$bakedimage" -v "$device"; then
   echo "SUCCESS"
 else
   echo "FAILED"
