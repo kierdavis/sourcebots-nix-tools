@@ -1,4 +1,4 @@
-{ fetchFromGitHub, makeWrapper, pbv4-firmware, perl, stdenv, stm32flash }:
+{ fetchFromGitHub, makeWrapper, perl, stdenv, stm32flash }:
 
 stdenv.mkDerivation {
   name = "pbv4-flash-scripts";
