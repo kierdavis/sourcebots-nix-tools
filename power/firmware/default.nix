@@ -6,8 +6,8 @@ stdenv.mkDerivation {
     owner = "sourcebots";
     repo = "power-v4-fw";
     fetchSubmodules = true;
-    rev = "c609c89d2b70fa1a3ff781a02eb10942157964eb";
-    sha256 = "06svznibm8vklhwgv3ivc8z932j7c6p2cd83p3fl8mlaa3rhkjc9";
+    rev = "2795f9bd390fe409986ee1642762408a8a98edc8";
+    sha256 = "11k3a6a835bqxslsggnmnn6dg8kv3hsgcdnw7w55342m7qd7dih1";
   };
   buildInputs = [ boost gcc-arm-embedded libopencm3 ];
   LIBOPENCM3 = "${libopencm3}/arm-none-eabi";
