@@ -7,8 +7,8 @@ python35Packages.buildPythonApplication rec {
   src = fetchFromGitHub {
     owner = "sourcebots";
     repo = "robotd";
-    rev = "d2957d9c72047c304ee83ab446ed7c16a29e6d99";
-    sha256 = "1mlc9q2fd316ygxffd8r7sdjals9yl07njpqaqd1s2kyjvx3p31r";
+    rev = "a25e970e32b2f9104e3e1daf1d71075c530e78d1";
+    sha256 = "0k8py1405r9jrbgy2ml5jgmh66zcjr20qn6x7b0wh00bcc9z1mzd";
   };
 
   buildInputs = [
@@ -23,10 +23,6 @@ python35Packages.buildPythonApplication rec {
     python35Packages.pyserial
     python35Packages.pyudev
     python35Packages.setproctitle
-  ];
-
-  patches = [
-    ./entrypoint.patch
   ];
 
   # The unit tests require an actual power board to be connected to the PC.
