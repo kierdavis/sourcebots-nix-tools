@@ -14,6 +14,13 @@ stdenv.mkDerivation {
   installPhase = ''
     install -D -m 0644 -t $out/images mcv4.{bin,elf} mcv4_test.{bin,elf}
     install -D -m 0644 -t $out/oocd oocd/mcv4.cfg
+
+    mkdir -p $out/bin
+    cat >$out/bin/mcv4-firmware-dir <<EOF
+      #!${stdenv.shell}
+      echo $out/images
+    EOF
+    chmod +x $out/bin/mcv4-firmware-dir
   '';
 
   meta = with stdenv.lib; {
