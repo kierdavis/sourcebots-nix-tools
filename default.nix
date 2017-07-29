@@ -10,5 +10,6 @@ in
     mcv4-firmware = pkgs.callPackage ./boards/mcv4/firmware.nix { inherit mcv4-libopencm3; };
     mcv4-flash-scripts = pkgs.callPackage ./motor/flash { motorFirmware = mcv4-firmware; };
 
-    robotd = pkgs.callPackage ./sw/robotd {};
+    sb-vision = pkgs.callPackage ./sw/sb-vision.nix {};
+    robotd = pkgs.callPackage ./sw/robotd { inherit sb-vision; };
   }

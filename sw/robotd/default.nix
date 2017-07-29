@@ -1,4 +1,4 @@
-{ stdenv, fetchFromGitHub, libusb1, opencv, python35Packages }:
+{ stdenv, fetchFromGitHub, libusb1, opencv, python35Packages, sb-vision }:
 
 python35Packages.buildPythonApplication rec {
   name = "robotd-${version}";
@@ -7,22 +7,20 @@ python35Packages.buildPythonApplication rec {
   src = fetchFromGitHub {
     owner = "sourcebots";
     repo = "robotd";
-    rev = "ae4ff38d7b189f9b731420166135d51571b83232";
-    sha256 = "02kndxjwvvarcycq8zwa24agv3x7510ng53ijwv7a481gmdfrg98";
+    rev = "5f590a3451efeedddb65c12d62232ddbbf1a4b35";
+    sha256 = "1f8l5gx2l7h8s6qjj6m7jkri0x66src23dkj49jwsm7v14ii8kb9";
   };
 
   buildInputs = [
     libusb1.dev
-    opencv.dev
   ];
 
   propagatedBuildInputs = [
     python35Packages.cffi
-    python35Packages.numpy
-    python35Packages.pillow
     python35Packages.pyserial
     python35Packages.pyudev
     python35Packages.setproctitle
+    sb-vision
   ];
 
   # The unit tests require an actual power board to be connected to the PC.
