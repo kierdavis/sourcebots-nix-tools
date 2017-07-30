@@ -1,6 +1,6 @@
 { fetchFromGitHub, opencv, python35Packages }:
 
-python35Packages.buildPythonApplication rec {
+python35Packages.buildPythonPackage rec {
   name = "sb-vision-${version}";
   version = "1.0";
 
