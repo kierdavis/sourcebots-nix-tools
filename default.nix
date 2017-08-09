@@ -10,5 +10,5 @@ in
 
     tools = pkgs.callPackage ./tools.nix {};
     sb-vision = pkgs.callPackage ./sw/sb-vision.nix {};
-    robotd = pkgs.callPackage ./sw/robotd { inherit sb-vision; };
+    robotd = pkgs.callPackage ./sw/robotd.nix { inherit sb-vision; };
   }
