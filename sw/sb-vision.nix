@@ -7,8 +7,8 @@ python35Packages.buildPythonPackage rec {
   src = fetchFromGitHub {
     owner = "sourcebots";
     repo = "sb-vision";
-    rev = "ec41d509e03f866cf50ec0dd0fa5d9cafcb59eb1";
-    sha256 = "0z8864y6sa0xxxn2jrnih427fss3hhc2r5nadm5g1zqdpg0ps1y5";
+    rev = "672207d86b3d6f00824ffb428762f49d8c352aa4";
+    sha256 = "0w8sa33ph0lz1dx9mlszp6k4l73jcq1nw6gi7vr8p7p1wc14n8mw";
   };
 
   buildInputs = [
