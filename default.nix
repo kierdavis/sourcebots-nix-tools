@@ -13,4 +13,8 @@ in
     robotd = pkgs.callPackage ./sw/robotd.nix { inherit sb-vision; };
     robot-api = pkgs.callPackage ./sw/robot-api {};
     robot-api-env = (pkgs.python35.withPackages (ps: [robot-api])).env;
+
+    glob2 = pkgs.callPackage ./lib/glob2.nix {};
+    arturo = pkgs.callPackage ./tools/arturo.nix { inherit glob2; };
+    arduino-firmware = pkgs.callPackage ./boards/arduino/firmware.nix { inherit arturo; };
   }
