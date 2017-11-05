@@ -7,8 +7,8 @@ python35Packages.buildPythonPackage rec {
   src = fetchFromGitHub {
     owner = "sourcebots";
     repo = "robot-api";
-    rev = "df6e4a7f421a75b4e67482ab79431e2868f2178f";
-    sha256 = "0ak0x5rycndmk5h1y9nwiqqpw0qj736c3mla4k2i3675v6573pmh";
+    rev = "348c5fe44b09e74e61e282f6aed379b56b1039a2";
+    sha256 = "0nsnpnw7r8nv1kf7az791gj3bjwjyz0ybdqvqhm8inw0b77kd881";
   };
 
   buildInputs = [];
