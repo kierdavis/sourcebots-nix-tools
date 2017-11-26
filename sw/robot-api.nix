@@ -1,4 +1,10 @@
-{ stdenv, fetchFromGitHub, python35Packages }:
+{ stdenv, fetchFromGitHub, python35Packages,
+  robotd ? null, sb-vision ? null, withTests ? false }:
+
+with stdenv.lib;
+
+assert withTests -> robotd != null;
+assert withTests -> sb-vision != null;
 
 python35Packages.buildPythonPackage rec {
   name = "robot-api-${version}";
@@ -13,7 +19,5 @@ python35Packages.buildPythonPackage rec {
 
   buildInputs = [];
 
-  propagatedBuildInputs = [];
-
-  doCheck = false;
+  propagatedBuildInputs = optional withTests [ robotd sb-vision ];
 }
