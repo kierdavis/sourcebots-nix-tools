@@ -12,8 +12,8 @@ General organisation:
 
 Usage:
 
-  git clone git@github.com:kierdavis/sourcebots-nix-tools.git
-  cd sourcebots-nix-tools
-  nix-build -A PACKAGE
+    git clone git@github.com:kierdavis/sourcebots-nix-tools.git
+    cd sourcebots-nix-tools
+    nix-build -A PACKAGE
 
 See the top-level `default.nix` for a list of packages.
