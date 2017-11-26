@@ -1,4 +1,4 @@
-{ stdenv, fetchFromGitHub, libusb1, opencv, python35Packages, sb-vision }:
+{ stdenv, fetchFromGitHub, libusb1, python35Packages, sb-vision }:
 
 python35Packages.buildPythonApplication rec {
   name = "robotd-${version}";
