@@ -13,8 +13,8 @@ python35Packages.buildPythonPackage rec {
   src = fetchFromGitHub {
     owner = "sourcebots";
     repo = "robot-api";
-    rev = "348c5fe44b09e74e61e282f6aed379b56b1039a2";
-    sha256 = "0nsnpnw7r8nv1kf7az791gj3bjwjyz0ybdqvqhm8inw0b77kd881";
+    rev = "4c25111c06faf8d433e91fbf148e229ecbe31bdd";
+    sha256 = "0lb2x002hy3map3bjl2d774l6618lkzp409imjnda4pl3ji1vwpz";
   };
 
   buildInputs = [];
