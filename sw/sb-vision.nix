@@ -24,7 +24,4 @@ python35Packages.buildPythonPackage rec {
 
   # The unit tests require an actual power board to be connected to the PC.
   doCheck = false;
-
-  # Ugly hack to make libusb header file available as "libusb.h" as well as "libusb-1.0/libusb.h".
-  # NIX_CFLAGS_COMPILE = "-isystem ${libusb1.dev}/include/libusb-1.0";
 }
