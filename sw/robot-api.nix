@@ -1,5 +1,5 @@
 { stdenv, fetchFromGitHub, python35Packages,
-  robotd ? null, sb-vision ? null, withTests ? false }:
+  robotd ? null, sb-vision ? null, withTests ? true }:
 
 with stdenv.lib;
 
