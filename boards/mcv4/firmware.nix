@@ -3,7 +3,7 @@
 stdenv.mkDerivation {
   name = "mcv4-firmware";
   src = fetchFromGitHub {
-    owner = "sourcebots";
+    owner = "srobo";
     repo = "motor-v4-fw";
     fetchSubmodules = true;
     rev = "292f135e097aef31a755a225de4b3814d9e3c474";
@@ -26,6 +26,6 @@ stdenv.mkDerivation {
   meta = with stdenv.lib; {
     #license = XXX;  # FIXME
     description = "Firmware for the MCV4 motor controller board";
-    homepage = https://github.com/sourcebots/motor-v4-fw;
+    homepage = https://github.com/srobo/motor-v4-fw;
   };
 }

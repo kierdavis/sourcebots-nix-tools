@@ -3,7 +3,7 @@
 stdenv.mkDerivation {
   name = "pbv4-firmware";
   src = fetchFromGitHub {
-    owner = "sourcebots";
+    owner = "srobo";
     repo = "power-v4-fw";
     fetchSubmodules = true;
     rev = "2795f9bd390fe409986ee1642762408a8a98edc8";
@@ -26,6 +26,6 @@ stdenv.mkDerivation {
   meta = with stdenv.lib; {
     #license = XXX;  # FIXME
     description = "Firmware for the PBV4 power board";
-    homepage = https://github.com/sourcebots/power-v4-fw;
+    homepage = https://github.com/srobo/power-v4-fw;
   };
 }

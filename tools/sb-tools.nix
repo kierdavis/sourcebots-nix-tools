@@ -3,7 +3,7 @@
 stdenv.mkDerivation {
   name = "tools";
   src = fetchFromGitHub {
-    owner = "sourcebots";
+    owner = "roboticsoutreach";
     repo = "tools";
     rev = "e1e0a09f24ee47db105ea55031fe1d1630aff72d";
     sha256 = "13pbwk209acyvxspk2a5g2jx6czx1vyljlg0j4xsamd1kkyvkkcd";
