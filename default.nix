@@ -11,7 +11,10 @@ in
     sbv4-libopencm3 = pkgs.callPackage ./boards/sbv4/libopencm3.nix {};
     sbv4-firmware = pkgs.callPackage ./boards/sbv4/firmware.nix { inherit sbv4-libopencm3; };
 
-    sb-tools = pkgs.callPackage ./tools/sb-tools.nix {};
+    sb-tools = pkgs.callPackage ./tools/sb-tools.nix {
+      python = pkgs.python3;
+      pyserial = pkgs.python3Packages.pyserial;
+    };
     sb-vision = pkgs.callPackage ./sw/sb-vision.nix {};
     robotd = pkgs.callPackage ./sw/robotd.nix { inherit sb-vision; };
     robot-api = pkgs.callPackage ./sw/robot-api.nix {};
