@@ -6,8 +6,8 @@ stdenv.mkDerivation {
     owner = "srobo";
     repo = "power-v4-fw";
     fetchSubmodules = true;
-    rev = "2795f9bd390fe409986ee1642762408a8a98edc8";
-    sha256 = "11k3a6a835bqxslsggnmnn6dg8kv3hsgcdnw7w55342m7qd7dih1";
+    rev = "031d0ed77b803e5aa3dcea7ac5aca3ffe5af3dd7";
+    sha256 = "015v171m2gck7jbp2fhdc2rlizpj520cb06i8icg8rawwkrk88j0";
   };
   buildInputs = [ boost gcc-arm-embedded pbv4-libopencm3 ];
   LIBOPENCM3 = "${pbv4-libopencm3}/arm-none-eabi";

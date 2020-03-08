@@ -6,8 +6,8 @@ stdenv.mkDerivation {
     owner = "srobo";
     repo = "motor-v4-fw";
     fetchSubmodules = true;
-    rev = "292f135e097aef31a755a225de4b3814d9e3c474";
-    sha256 = "1f0izkaii721alb0srpbd9jph2zd5xsz42y0kbyyyk6ngfdlgl9c";
+    rev = "6d21289a9bc43aa76d1ecd573993e604e7cb0814";
+    sha256 = "1cd9ikawbn4wrdrxyslg8lg7kmmg2zmsbgx2h2nz95wbcafcv1yf";
   };
   buildInputs = [ gcc-arm-embedded mcv4-libopencm3 ];
   TOOLCHAIN_DIR = "${mcv4-libopencm3}/arm-none-eabi";
