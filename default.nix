@@ -8,6 +8,9 @@ in
     mcv4-libopencm3 = pkgs.callPackage ./boards/mcv4/libopencm3.nix {};
     mcv4-firmware = pkgs.callPackage ./boards/mcv4/firmware.nix { inherit mcv4-libopencm3; };
 
+    sbv4-libopencm3 = pkgs.callPackage ./boards/sbv4/libopencm3.nix {};
+    sbv4-firmware = pkgs.callPackage ./boards/sbv4/firmware.nix { inherit sbv4-libopencm3; };
+
     sb-tools = pkgs.callPackage ./tools/sb-tools.nix {};
     sb-vision = pkgs.callPackage ./sw/sb-vision.nix {};
     robotd = pkgs.callPackage ./sw/robotd.nix { inherit sb-vision; };
